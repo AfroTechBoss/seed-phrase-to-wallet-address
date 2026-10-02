@@ -5,7 +5,8 @@
   "description": "Move TRC-20 tokens (e.g. USDT) from a wallet you own to a new address. Signs locally in the browser.",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/build.mjs && node local-server.js"
   },
   "dependencies": {
     "tronweb": "^6.5.1"

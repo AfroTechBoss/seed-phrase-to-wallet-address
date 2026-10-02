@@ -1,4 +1,5 @@
-// Tiny static server. It only serves files; it never receives keys.
+// Tiny static server for running locally (Vercel serves public/ directly via vercel.json).
+// It only serves files; it never receives keys.
 // All key handling and signing happens in the browser (public/app.js).
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
@@ -13,7 +14,7 @@ const FILES = {
   '/': ['public/index.html', 'text/html; charset=utf-8'],
   '/style.css': ['public/style.css', 'text/css; charset=utf-8'],
   '/app.js': ['public/app.js', 'text/javascript; charset=utf-8'],
-  '/tronweb.js': ['node_modules/tronweb/dist/TronWeb.js', 'text/javascript; charset=utf-8'],
+  '/tronweb.js': ['public/tronweb.js', 'text/javascript; charset=utf-8'],
 };
 
 const CSP = [
