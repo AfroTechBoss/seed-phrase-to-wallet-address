@@ -1,0 +1,13 @@
+{
+  "name": "trc20-mover",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Move TRC-20 tokens (e.g. USDT) from a wallet you own to a new address. Signs locally in the browser.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "tronweb": "^6.5.1"
+  }
+}

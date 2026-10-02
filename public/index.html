@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>USDT Mover</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>USDT Mover</h1>
+    <p class="sub">Move TRON USDT (TRC-20) from a wallet you own to a new address. Your key stays in this browser tab and is used only to sign.</p>
+
+    <div id="netBanner" class="banner"></div>
+
+    <form id="form" autocomplete="off">
+      <label>Network
+        <select id="network">
+          <option value="mainnet" selected>Mainnet: USDT (real funds)</option>
+          <option value="nile">Nile testnet</option>
+          <option value="shasta">Shasta testnet</option>
+        </select>
+      </label>
+
+      <label>Private key or seed phrase
+        <div class="row">
+          <input id="secret" type="password" spellcheck="false" autocapitalize="off" placeholder="64-hex private key or 12/24-word phrase">
+          <button type="button" id="toggle" class="ghost">Show</button>
+        </div>
+      </label>
+
+      <label>New wallet address (destination)
+        <input id="dest" spellcheck="false" autocapitalize="off" placeholder="T...">
+      </label>
+
+      <details>
+        <summary>Advanced</summary>
+        <label>Token contract
+          <input id="token" spellcheck="false" placeholder="T... (TRC-20 contract)">
+        </label>
+        <label>Amount (blank = everything)
+          <input id="amount" inputmode="decimal" placeholder="all">
+        </label>
+        <label>Seed derivation path
+          <input id="path" value="m/44'/195'/0'/0/0" spellcheck="false">
+        </label>
+        <label>TronGrid API key (optional, helps on mainnet)
+          <input id="apikey" type="password" spellcheck="false">
+        </label>
+      </details>
+
+      <div class="actions">
+        <button type="button" id="check" class="ghost">Check wallet</button>
+        <button type="submit" id="move">Move</button>
+      </div>
+    </form>
+
+    <section id="info" hidden></section>
+    <section id="log"></section>
+  </main>
+  <script src="/tronweb.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

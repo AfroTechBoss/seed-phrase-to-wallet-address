@@ -1,0 +1,42 @@
+:root {
+  --bg: #f6f7f9; --card: #fff; --text: #16181d; --muted: #646b78; --border: #d9dde4;
+  --accent: #c8102e; --accent-text: #fff; --ok: #137a3a; --warn: #a15c00; --err: #b3261e;
+  --test-bg: #e8f1ff; --test-text: #134a9c; --main-bg: #ffe9e6; --main-text: #9b1c10;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111317; --card: #1a1d23; --text: #e8eaee; --muted: #9aa1ad; --border: #30353e;
+    --accent: #e0384f; --ok: #4cc27a; --warn: #f0a643; --err: #ff6b60;
+    --test-bg: #16263f; --test-text: #9cc2ff; --main-bg: #3b1714; --main-text: #ffb4a9;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 560px; margin: 32px auto; padding: 0 16px; }
+h1 { margin: 0 0 4px; font-size: 26px; }
+.sub { margin: 0 0 16px; color: var(--muted); }
+.banner { padding: 8px 12px; border-radius: 8px; font-weight: 600; margin-bottom: 16px; }
+.banner.test { background: var(--test-bg); color: var(--test-text); }
+.banner.main { background: var(--main-bg); color: var(--main-text); }
+form, #info, #log:not(:empty) { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+label { display: block; margin-bottom: 14px; font-weight: 600; font-size: 14px; }
+input, select { display: block; width: 100%; margin-top: 4px; padding: 10px; font: 14px ui-monospace, Consolas, monospace;
+  background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; }
+select { font-family: inherit; }
+.row { display: flex; gap: 8px; margin-top: 4px; }
+.row input { margin-top: 0; }
+details { margin-bottom: 14px; }
+summary { cursor: pointer; color: var(--muted); margin-bottom: 10px; }
+.actions { display: flex; gap: 8px; }
+button { padding: 10px 18px; font: 600 15px system-ui, sans-serif; border-radius: 8px; border: 1px solid var(--accent);
+  background: var(--accent); color: var(--accent-text); cursor: pointer; }
+button.ghost { background: transparent; color: var(--text); border-color: var(--border); }
+button:disabled { opacity: .5; cursor: wait; }
+#move { flex: 1; }
+#info, #log:not(:empty) { margin-top: 16px; }
+#info dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 0; }
+#info dt { color: var(--muted); }
+#info dd { margin: 0; font-family: ui-monospace, Consolas, monospace; word-break: break-all; }
+#log div { padding: 4px 0; word-break: break-all; }
+.ok { color: var(--ok); } .warn { color: var(--warn); } .err { color: var(--err); }
+a { color: inherit; }
